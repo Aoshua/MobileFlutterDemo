@@ -1,23 +1,23 @@
 sealed class AppFailure {
-    const AppFailure();
+  const AppFailure();
 }
 
 final class NetworkFailure extends AppFailure {
-    final String? message;
-    const NetworkFailure({this.message});
+  const NetworkFailure({this.message});
+  final String? message;
 }
 
 final class ServerFailure extends AppFailure {
-    final String? message;
-    final int statusCode;
-    const ServerFailure({required this.statusCode, this.message});
+  const ServerFailure({required this.statusCode, this.message});
+  final String? message;
+  final int statusCode;
 }
 
 final class NotFoundFailure extends AppFailure {
-    const NofFoundFailure();
+  const NotFoundFailure();
 }
 
 final class UnknownFailure extends AppFailure {
-    final Object error;
-    const UnknownFailure({required this.error});
+  const UnknownFailure({required this.error});
+  final Object error;
 }

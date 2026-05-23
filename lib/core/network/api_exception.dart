@@ -1,7 +1,9 @@
-class ApiException implements Exception {
-    const ApiException({required this.failure});
-    final AppFailure failure;
+import 'package:mobile_flutter_demo/core/failure.dart';
 
-    @override
-    String toString() => 'ApiException($failure)';
+class ApiException implements Exception {
+  const ApiException({required this.failure});
+  final AppFailure failure;
+
+  @override
+  String toString() => 'ApiException($failure)';
 }
