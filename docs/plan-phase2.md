@@ -56,6 +56,58 @@ In Dart, plain classes are mutable and have no built-in equality. `freezed` gene
 
 You write ~10 lines; `freezed` generates ~100 lines of correct, tested boilerplate.
 
+#### The syntax pattern
+
+```dart
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'article.freezed.dart';  // generated file, treated as part of this library
+
+@freezed                       // triggers the generator
+class Article with _$Article { // _$Article mixin comes from the generated file
+  const factory Article({     // const factory constructor
+    required int id,
+    required String title,
+    String? coverImageUrl,    // nullable = optional
+  }) = _Article;              // _Article is the generated concrete class
+}
+```
+
+Four pieces must all be present or code generation will fail: `@freezed`, `with _$ClassName`, `const factory`, and `= _ClassName`.
+
+#### What gets generated (into `article.freezed.dart`)
+
+| Generated feature | What it gives you |
+|---|---|
+| Immutable fields | All fields are `final`; you cannot mutate after construction |
+| `copyWith` | `article.copyWith(title: 'New')` returns a new instance with just that field changed |
+| `==` and `hashCode` | Two `Article` objects with the same field values are equal |
+| `toString` | `Article(id: 1, title: 'Hello', ...)` — useful in debug output |
+
+`copyWith` is essential for Riverpod state — you never mutate state in place, you always produce a new value. Value equality means `ref.watch` can correctly detect when state actually changed.
+
+#### DTOs get an extra layer
+
+DTO classes combine `@freezed` with `@JsonSerializable`, requiring two `part` directives and two generated files:
+
+```dart
+part 'article_dto.freezed.dart';
+part 'article_dto.g.dart';      // second generated file, from json_serializable
+
+@freezed
+class ArticleDto with _$ArticleDto {
+  const factory ArticleDto({
+    @JsonKey(name: 'cover_image') String? coverImage, // renames the JSON key
+    ...
+  }) = _ArticleDto;
+
+  factory ArticleDto.fromJson(Map<String, dynamic> json) =>
+      _$ArticleDtoFromJson(json); // implemented in the .g.dart file
+}
+```
+
+`freezed` produces the `.freezed.dart` file (immutability, copyWith, equality). `json_serializable` produces the `.g.dart` file (`fromJson`/`toJson`). Both run on the same class; both `part` directives are required. The domain `Article` uses only `@freezed` — no JSON annotations, no knowledge of the network.
+
 ### Why two model files (DTO vs domain)?
 
 The **DTO** (`article_dto.dart`) maps 1:1 to the JSON the API sends. It uses `@JsonKey` annotations to rename snake_case JSON fields to camelCase Dart fields, and `@JsonSerializable` to generate `fromJson`/`toJson`.
