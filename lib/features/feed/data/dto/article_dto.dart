@@ -17,7 +17,7 @@ class ArticleDto with _$ArticleDto {
     required String url,
     required UserDto user,
     @JsonKey(name: 'cover_image') String? coverImage,
-    @JsonKey(name: 'positive_reqactions_count')
+    @JsonKey(name: 'positive_reactions_count')
     required int positiveReactionsCount,
     @JsonKey(name: 'comments_count') required int commentsCount,
     // json_serializable knows how to parse ISO 8601 date strings to

@@ -28,7 +28,7 @@ mixin _$ArticleDto {
   UserDto get user => throw _privateConstructorUsedError;
   @JsonKey(name: 'cover_image')
   String? get coverImage => throw _privateConstructorUsedError;
-  @JsonKey(name: 'positive_reqactions_count')
+  @JsonKey(name: 'positive_reactions_count')
   int get positiveReactionsCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'comments_count')
   int get commentsCount => throw _privateConstructorUsedError; // json_serializable knows how to parse ISO 8601 date strings to
@@ -62,7 +62,7 @@ abstract class $ArticleDtoCopyWith<$Res> {
     String url,
     UserDto user,
     @JsonKey(name: 'cover_image') String? coverImage,
-    @JsonKey(name: 'positive_reqactions_count') int positiveReactionsCount,
+    @JsonKey(name: 'positive_reactions_count') int positiveReactionsCount,
     @JsonKey(name: 'comments_count') int commentsCount,
     @JsonKey(name: 'published_at') DateTime publishedAt,
     @JsonKey(name: 'tag_list') List<String> tagList,
@@ -171,7 +171,7 @@ abstract class _$$ArticleDtoImplCopyWith<$Res>
     String url,
     UserDto user,
     @JsonKey(name: 'cover_image') String? coverImage,
-    @JsonKey(name: 'positive_reqactions_count') int positiveReactionsCount,
+    @JsonKey(name: 'positive_reactions_count') int positiveReactionsCount,
     @JsonKey(name: 'comments_count') int commentsCount,
     @JsonKey(name: 'published_at') DateTime publishedAt,
     @JsonKey(name: 'tag_list') List<String> tagList,
@@ -263,7 +263,7 @@ class _$ArticleDtoImpl implements _ArticleDto {
     required this.url,
     required this.user,
     @JsonKey(name: 'cover_image') this.coverImage,
-    @JsonKey(name: 'positive_reqactions_count')
+    @JsonKey(name: 'positive_reactions_count')
     required this.positiveReactionsCount,
     @JsonKey(name: 'comments_count') required this.commentsCount,
     @JsonKey(name: 'published_at') required this.publishedAt,
@@ -287,7 +287,7 @@ class _$ArticleDtoImpl implements _ArticleDto {
   @JsonKey(name: 'cover_image')
   final String? coverImage;
   @override
-  @JsonKey(name: 'positive_reqactions_count')
+  @JsonKey(name: 'positive_reactions_count')
   final int positiveReactionsCount;
   @override
   @JsonKey(name: 'comments_count')
@@ -371,7 +371,7 @@ abstract class _ArticleDto implements ArticleDto {
     required final String url,
     required final UserDto user,
     @JsonKey(name: 'cover_image') final String? coverImage,
-    @JsonKey(name: 'positive_reqactions_count')
+    @JsonKey(name: 'positive_reactions_count')
     required final int positiveReactionsCount,
     @JsonKey(name: 'comments_count') required final int commentsCount,
     @JsonKey(name: 'published_at') required final DateTime publishedAt,
@@ -395,7 +395,7 @@ abstract class _ArticleDto implements ArticleDto {
   @JsonKey(name: 'cover_image')
   String? get coverImage;
   @override
-  @JsonKey(name: 'positive_reqactions_count')
+  @JsonKey(name: 'positive_reactions_count')
   int get positiveReactionsCount;
   @override
   @JsonKey(name: 'comments_count')
