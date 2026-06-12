@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_flutter_demo/features/feed/domain/article.dart';
 
 class ArticleCard extends StatelessWidget {
-  const ArticleCard({super.key, required this.article});
+  const ArticleCard({required this.article, super.key});
   final Article article;
 
   @override

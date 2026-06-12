@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:mobile_flutter_demo/core/failure.dart';
 import 'package:mobile_flutter_demo/core/network/api_exception.dart';
-import 'dto/article_dto.dart';
+import 'package:mobile_flutter_demo/features/feed/data/dto/article_dto.dart';
 
 class ArticleApi {
   const ArticleApi({required this.dio});

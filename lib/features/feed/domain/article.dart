@@ -11,10 +11,10 @@ class Article with _$Article {
     required String url,
     required String username,
     required String userProfileImage,
-    String? coverImageUrl,
     required int positiveReactionsCount,
     required int commentsCount,
     required DateTime publishedAt,
     required List<String> tags,
+    String? coverImageUrl,
   }) = _Article;
 }

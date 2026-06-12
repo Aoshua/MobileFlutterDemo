@@ -1,4 +1,3 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_flutter_demo/core/result.dart';
 import 'package:mobile_flutter_demo/features/feed/data/article_repository_impl.dart';
 import 'package:mobile_flutter_demo/features/feed/domain/article.dart';
@@ -28,7 +27,7 @@ class FeedController extends _$FeedController {
     state = const AsyncLoading();
 
     final next = _page + 1;
-    final result = await _repo.getArticles(page: next, perPage: _perPage);
+    final result = await _repo.getArticles(page: next);
 
     switch (result) {
       case Ok(:final value):
@@ -55,10 +54,11 @@ class FeedController extends _$FeedController {
   ArticleRepository get _repo => ref.read(articleRepositoryProvider);
 
   Future<List<Article>> _fetchPage(int page) async {
-    final result = await _repo.getArticles(page: page, perPage: _perPage);
+    final result = await _repo.getArticles(page: page);
     return switch (result) {
       Ok(:final value) => value,
-      Err(:final error) => throw error, // Caught by AsyncNotifier.build -> AsyncError
+      Err(:final error) =>
+        throw error, // Caught by AsyncNotifier.build -> AsyncError
     };
   }
 }

@@ -1,6 +1,6 @@
 import 'package:mobile_flutter_demo/core/failure.dart';
 import 'package:mobile_flutter_demo/core/result.dart';
-import 'article.dart';
+import 'package:mobile_flutter_demo/features/feed/domain/article.dart';
 
 // "abstract interface class" is a class that con only be implemented,
 // not extended. Using an interface here allows us to swap implementations

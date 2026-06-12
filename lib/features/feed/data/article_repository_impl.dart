@@ -1,12 +1,12 @@
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:mobile_flutter_demo/core/failure.dart';
 import 'package:mobile_flutter_demo/core/network/api_exception.dart';
 import 'package:mobile_flutter_demo/core/network/dio_client.dart';
 import 'package:mobile_flutter_demo/core/result.dart';
+import 'package:mobile_flutter_demo/features/feed/data/article_api.dart';
+import 'package:mobile_flutter_demo/features/feed/data/dto/article_dto.dart';
 import 'package:mobile_flutter_demo/features/feed/domain/article.dart';
 import 'package:mobile_flutter_demo/features/feed/domain/article_repository.dart';
-import 'article_api.dart';
-import 'dto/article_dto.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'article_repository_impl.g.dart';
 

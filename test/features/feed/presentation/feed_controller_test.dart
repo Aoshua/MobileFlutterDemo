@@ -43,7 +43,7 @@ void main() {
   test('transitions AsyncLoading → AsyncError on failure', () async {
     when(
       () => mockRepo.getArticles(page: 1, perPage: any(named: 'perPage')),
-    ).thenAnswer((_) async => Err(const NetworkFailure()));
+    ).thenAnswer((_) async => const Err(NetworkFailure()));
 
     await expectLater(
       container.read(feedControllerProvider.future),

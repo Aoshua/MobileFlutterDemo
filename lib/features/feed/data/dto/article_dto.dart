@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:json_annotation/json_annotation.dart';
-import 'user_dto.dart';
+import 'package:mobile_flutter_demo/features/feed/data/dto/user_dto.dart';
 
 part 'article_dto.freezed.dart';
 part 'article_dto.g.dart';
@@ -16,14 +15,15 @@ class ArticleDto with _$ArticleDto {
     required String description,
     required String url,
     required UserDto user,
-    @JsonKey(name: 'cover_image') String? coverImage,
     @JsonKey(name: 'positive_reactions_count')
     required int positiveReactionsCount,
-    @JsonKey(name: 'comments_count') required int commentsCount,
-    // json_serializable knows how to parse ISO 8601 date strings to
+    @JsonKey(name: 'comments_count')
+    required int
+    commentsCount, // json_serializable knows how to parse ISO 8601 date strings to
     // DateTime automatically.
     @JsonKey(name: 'published_at') required DateTime publishedAt,
     @JsonKey(name: 'tag_list') required List<String> tagList,
+    @JsonKey(name: 'cover_image') String? coverImage,
   }) = _ArticleDto;
 
   factory ArticleDto.fromJson(Map<String, dynamic> json) =>
