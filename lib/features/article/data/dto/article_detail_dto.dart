@@ -10,10 +10,10 @@ class ArticleDetailDto with _$ArticleDetailDto {
     required int id,
     required String title,
     required String description,
-    @JsonKey(name: 'body_markdown') required String bodyMarkdown,
+    @JsonKey(name: 'body_html') required String bodyHtml,
     required String url,
     @JsonKey(name: 'published_at') required DateTime publishedAt,
-    @JsonKey(name: 'tag_list') required List<String> tagList,
+    @JsonKey(name: 'tags') required List<String> tagList,
     @JsonKey(name: 'positive_reactions_count')
     required int positiveReactionsCount,
     @JsonKey(name: 'comments_count') required int commentsCount,

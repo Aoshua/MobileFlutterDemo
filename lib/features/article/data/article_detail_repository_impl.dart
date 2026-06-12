@@ -32,7 +32,7 @@ class ArticleDetailRepositoryImpl implements ArticleDetailRepository {
     id: dto.id,
     title: dto.title,
     description: dto.description,
-    bodyMarkdown: dto.bodyMarkdown,
+    bodyHtml: dto.bodyHtml,
     url: dto.url,
     username: dto.user.username,
     userProfileImage: dto.user.profileImage,

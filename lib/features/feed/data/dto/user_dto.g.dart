@@ -9,11 +9,11 @@ part of 'user_dto.dart';
 _$UserDtoImpl _$$UserDtoImplFromJson(Map<String, dynamic> json) =>
     _$UserDtoImpl(
       username: json['username'] as String,
-      profileImage: json['profile_image_90'] as String,
+      profileImage: json['profile_image'] as String,
     );
 
 Map<String, dynamic> _$$UserDtoImplToJson(_$UserDtoImpl instance) =>
     <String, dynamic>{
       'username': instance.username,
-      'profile_image_90': instance.profileImage,
+      'profile_image': instance.profileImage,
     };

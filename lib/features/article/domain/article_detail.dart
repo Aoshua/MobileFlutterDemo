@@ -8,7 +8,7 @@ class ArticleDetail with _$ArticleDetail {
     required int id,
     required String title,
     required String description,
-    required String bodyMarkdown,
+    required String bodyHtml,
     required String url,
     required String username,
     required String userProfileImage,

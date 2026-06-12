@@ -7,7 +7,7 @@ part 'user_dto.g.dart';
 class UserDto with _$UserDto {
   const factory UserDto({
     required String username,
-    @JsonKey(name: 'profile_image_90') // Renames the JSON key
+    @JsonKey(name: 'profile_image') // Renames the JSON key
     required String profileImage,
   }) = _UserDto;
 

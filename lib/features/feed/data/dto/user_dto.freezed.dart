@@ -22,7 +22,7 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserDto {
   String get username => throw _privateConstructorUsedError;
-  @JsonKey(name: 'profile_image_90')
+  @JsonKey(name: 'profile_image')
   String get profileImage => throw _privateConstructorUsedError;
 
   /// Serializes this UserDto to a JSON map.
@@ -41,7 +41,7 @@ abstract class $UserDtoCopyWith<$Res> {
   @useResult
   $Res call({
     String username,
-    @JsonKey(name: 'profile_image_90') String profileImage,
+    @JsonKey(name: 'profile_image') String profileImage,
   });
 }
 
@@ -86,7 +86,7 @@ abstract class _$$UserDtoImplCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   @useResult
   $Res call({
     String username,
-    @JsonKey(name: 'profile_image_90') String profileImage,
+    @JsonKey(name: 'profile_image') String profileImage,
   });
 }
 
@@ -124,7 +124,7 @@ class __$$UserDtoImplCopyWithImpl<$Res>
 class _$UserDtoImpl implements _UserDto {
   const _$UserDtoImpl({
     required this.username,
-    @JsonKey(name: 'profile_image_90') required this.profileImage,
+    @JsonKey(name: 'profile_image') required this.profileImage,
   });
 
   factory _$UserDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -133,7 +133,7 @@ class _$UserDtoImpl implements _UserDto {
   @override
   final String username;
   @override
-  @JsonKey(name: 'profile_image_90')
+  @JsonKey(name: 'profile_image')
   final String profileImage;
 
   @override
@@ -173,7 +173,7 @@ class _$UserDtoImpl implements _UserDto {
 abstract class _UserDto implements UserDto {
   const factory _UserDto({
     required final String username,
-    @JsonKey(name: 'profile_image_90') required final String profileImage,
+    @JsonKey(name: 'profile_image') required final String profileImage,
   }) = _$UserDtoImpl;
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$UserDtoImpl.fromJson;
@@ -181,7 +181,7 @@ abstract class _UserDto implements UserDto {
   @override
   String get username;
   @override
-  @JsonKey(name: 'profile_image_90')
+  @JsonKey(name: 'profile_image')
   String get profileImage;
 
   /// Create a copy of UserDto

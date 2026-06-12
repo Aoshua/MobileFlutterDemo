@@ -24,12 +24,12 @@ mixin _$ArticleDetailDto {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  @JsonKey(name: 'body_markdown')
-  String get bodyMarkdown => throw _privateConstructorUsedError;
+  @JsonKey(name: 'body_html')
+  String get bodyHtml => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   @JsonKey(name: 'published_at')
   DateTime get publishedAt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'tag_list')
+  @JsonKey(name: 'tags')
   List<String> get tagList => throw _privateConstructorUsedError;
   @JsonKey(name: 'positive_reactions_count')
   int get positiveReactionsCount => throw _privateConstructorUsedError;
@@ -62,10 +62,10 @@ abstract class $ArticleDetailDtoCopyWith<$Res> {
     int id,
     String title,
     String description,
-    @JsonKey(name: 'body_markdown') String bodyMarkdown,
+    @JsonKey(name: 'body_html') String bodyHtml,
     String url,
     @JsonKey(name: 'published_at') DateTime publishedAt,
-    @JsonKey(name: 'tag_list') List<String> tagList,
+    @JsonKey(name: 'tags') List<String> tagList,
     @JsonKey(name: 'positive_reactions_count') int positiveReactionsCount,
     @JsonKey(name: 'comments_count') int commentsCount,
     @JsonKey(name: 'reading_time_minutes') int readingTimeMinutes,
@@ -94,7 +94,7 @@ class _$ArticleDetailDtoCopyWithImpl<$Res, $Val extends ArticleDetailDto>
     Object? id = null,
     Object? title = null,
     Object? description = null,
-    Object? bodyMarkdown = null,
+    Object? bodyHtml = null,
     Object? url = null,
     Object? publishedAt = null,
     Object? tagList = null,
@@ -118,9 +118,9 @@ class _$ArticleDetailDtoCopyWithImpl<$Res, $Val extends ArticleDetailDto>
                 ? _value.description
                 : description // ignore: cast_nullable_to_non_nullable
                       as String,
-            bodyMarkdown: null == bodyMarkdown
-                ? _value.bodyMarkdown
-                : bodyMarkdown // ignore: cast_nullable_to_non_nullable
+            bodyHtml: null == bodyHtml
+                ? _value.bodyHtml
+                : bodyHtml // ignore: cast_nullable_to_non_nullable
                       as String,
             url: null == url
                 ? _value.url
@@ -183,10 +183,10 @@ abstract class _$$ArticleDetailDtoImplCopyWith<$Res>
     int id,
     String title,
     String description,
-    @JsonKey(name: 'body_markdown') String bodyMarkdown,
+    @JsonKey(name: 'body_html') String bodyHtml,
     String url,
     @JsonKey(name: 'published_at') DateTime publishedAt,
-    @JsonKey(name: 'tag_list') List<String> tagList,
+    @JsonKey(name: 'tags') List<String> tagList,
     @JsonKey(name: 'positive_reactions_count') int positiveReactionsCount,
     @JsonKey(name: 'comments_count') int commentsCount,
     @JsonKey(name: 'reading_time_minutes') int readingTimeMinutes,
@@ -215,7 +215,7 @@ class __$$ArticleDetailDtoImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? description = null,
-    Object? bodyMarkdown = null,
+    Object? bodyHtml = null,
     Object? url = null,
     Object? publishedAt = null,
     Object? tagList = null,
@@ -239,9 +239,9 @@ class __$$ArticleDetailDtoImplCopyWithImpl<$Res>
             ? _value.description
             : description // ignore: cast_nullable_to_non_nullable
                   as String,
-        bodyMarkdown: null == bodyMarkdown
-            ? _value.bodyMarkdown
-            : bodyMarkdown // ignore: cast_nullable_to_non_nullable
+        bodyHtml: null == bodyHtml
+            ? _value.bodyHtml
+            : bodyHtml // ignore: cast_nullable_to_non_nullable
                   as String,
         url: null == url
             ? _value.url
@@ -287,10 +287,10 @@ class _$ArticleDetailDtoImpl implements _ArticleDetailDto {
     required this.id,
     required this.title,
     required this.description,
-    @JsonKey(name: 'body_markdown') required this.bodyMarkdown,
+    @JsonKey(name: 'body_html') required this.bodyHtml,
     required this.url,
     @JsonKey(name: 'published_at') required this.publishedAt,
-    @JsonKey(name: 'tag_list') required final List<String> tagList,
+    @JsonKey(name: 'tags') required final List<String> tagList,
     @JsonKey(name: 'positive_reactions_count')
     required this.positiveReactionsCount,
     @JsonKey(name: 'comments_count') required this.commentsCount,
@@ -309,8 +309,8 @@ class _$ArticleDetailDtoImpl implements _ArticleDetailDto {
   @override
   final String description;
   @override
-  @JsonKey(name: 'body_markdown')
-  final String bodyMarkdown;
+  @JsonKey(name: 'body_html')
+  final String bodyHtml;
   @override
   final String url;
   @override
@@ -318,7 +318,7 @@ class _$ArticleDetailDtoImpl implements _ArticleDetailDto {
   final DateTime publishedAt;
   final List<String> _tagList;
   @override
-  @JsonKey(name: 'tag_list')
+  @JsonKey(name: 'tags')
   List<String> get tagList {
     if (_tagList is EqualUnmodifiableListView) return _tagList;
     // ignore: implicit_dynamic_type
@@ -342,7 +342,7 @@ class _$ArticleDetailDtoImpl implements _ArticleDetailDto {
 
   @override
   String toString() {
-    return 'ArticleDetailDto(id: $id, title: $title, description: $description, bodyMarkdown: $bodyMarkdown, url: $url, publishedAt: $publishedAt, tagList: $tagList, positiveReactionsCount: $positiveReactionsCount, commentsCount: $commentsCount, readingTimeMinutes: $readingTimeMinutes, coverImage: $coverImage, user: $user)';
+    return 'ArticleDetailDto(id: $id, title: $title, description: $description, bodyHtml: $bodyHtml, url: $url, publishedAt: $publishedAt, tagList: $tagList, positiveReactionsCount: $positiveReactionsCount, commentsCount: $commentsCount, readingTimeMinutes: $readingTimeMinutes, coverImage: $coverImage, user: $user)';
   }
 
   @override
@@ -354,8 +354,8 @@ class _$ArticleDetailDtoImpl implements _ArticleDetailDto {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.bodyMarkdown, bodyMarkdown) ||
-                other.bodyMarkdown == bodyMarkdown) &&
+            (identical(other.bodyHtml, bodyHtml) ||
+                other.bodyHtml == bodyHtml) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.publishedAt, publishedAt) ||
                 other.publishedAt == publishedAt) &&
@@ -378,7 +378,7 @@ class _$ArticleDetailDtoImpl implements _ArticleDetailDto {
     id,
     title,
     description,
-    bodyMarkdown,
+    bodyHtml,
     url,
     publishedAt,
     const DeepCollectionEquality().hash(_tagList),
@@ -411,10 +411,10 @@ abstract class _ArticleDetailDto implements ArticleDetailDto {
     required final int id,
     required final String title,
     required final String description,
-    @JsonKey(name: 'body_markdown') required final String bodyMarkdown,
+    @JsonKey(name: 'body_html') required final String bodyHtml,
     required final String url,
     @JsonKey(name: 'published_at') required final DateTime publishedAt,
-    @JsonKey(name: 'tag_list') required final List<String> tagList,
+    @JsonKey(name: 'tags') required final List<String> tagList,
     @JsonKey(name: 'positive_reactions_count')
     required final int positiveReactionsCount,
     @JsonKey(name: 'comments_count') required final int commentsCount,
@@ -434,15 +434,15 @@ abstract class _ArticleDetailDto implements ArticleDetailDto {
   @override
   String get description;
   @override
-  @JsonKey(name: 'body_markdown')
-  String get bodyMarkdown;
+  @JsonKey(name: 'body_html')
+  String get bodyHtml;
   @override
   String get url;
   @override
   @JsonKey(name: 'published_at')
   DateTime get publishedAt;
   @override
-  @JsonKey(name: 'tag_list')
+  @JsonKey(name: 'tags')
   List<String> get tagList;
   @override
   @JsonKey(name: 'positive_reactions_count')

@@ -65,7 +65,7 @@ class ArticleDetailPage extends ConsumerWidget {
                     const SizedBox(height: 16),
                     RepaintBoundary(
                       child: ArticleMarkdownBody(
-                        markdown: article.bodyMarkdown,
+                        markdown: article.bodyHtml,
                       ),
                     ),
                     const SizedBox(height: 32),
