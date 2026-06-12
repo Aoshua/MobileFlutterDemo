@@ -23,11 +23,11 @@ mixin _$Article {
   String get url => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get userProfileImage => throw _privateConstructorUsedError;
-  String? get coverImageUrl => throw _privateConstructorUsedError;
   int get positiveReactionsCount => throw _privateConstructorUsedError;
   int get commentsCount => throw _privateConstructorUsedError;
   DateTime get publishedAt => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
+  String? get coverImageUrl => throw _privateConstructorUsedError;
 
   /// Create a copy of Article
   /// with the given fields replaced by the non-null parameter values.
@@ -47,11 +47,11 @@ abstract class $ArticleCopyWith<$Res> {
     String url,
     String username,
     String userProfileImage,
-    String? coverImageUrl,
     int positiveReactionsCount,
     int commentsCount,
     DateTime publishedAt,
     List<String> tags,
+    String? coverImageUrl,
   });
 }
 
@@ -76,11 +76,11 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
     Object? url = null,
     Object? username = null,
     Object? userProfileImage = null,
-    Object? coverImageUrl = freezed,
     Object? positiveReactionsCount = null,
     Object? commentsCount = null,
     Object? publishedAt = null,
     Object? tags = null,
+    Object? coverImageUrl = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -108,10 +108,6 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
                 ? _value.userProfileImage
                 : userProfileImage // ignore: cast_nullable_to_non_nullable
                       as String,
-            coverImageUrl: freezed == coverImageUrl
-                ? _value.coverImageUrl
-                : coverImageUrl // ignore: cast_nullable_to_non_nullable
-                      as String?,
             positiveReactionsCount: null == positiveReactionsCount
                 ? _value.positiveReactionsCount
                 : positiveReactionsCount // ignore: cast_nullable_to_non_nullable
@@ -128,6 +124,10 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
                 ? _value.tags
                 : tags // ignore: cast_nullable_to_non_nullable
                       as List<String>,
+            coverImageUrl: freezed == coverImageUrl
+                ? _value.coverImageUrl
+                : coverImageUrl // ignore: cast_nullable_to_non_nullable
+                      as String?,
           )
           as $Val,
     );
@@ -149,11 +149,11 @@ abstract class _$$ArticleImplCopyWith<$Res> implements $ArticleCopyWith<$Res> {
     String url,
     String username,
     String userProfileImage,
-    String? coverImageUrl,
     int positiveReactionsCount,
     int commentsCount,
     DateTime publishedAt,
     List<String> tags,
+    String? coverImageUrl,
   });
 }
 
@@ -177,11 +177,11 @@ class __$$ArticleImplCopyWithImpl<$Res>
     Object? url = null,
     Object? username = null,
     Object? userProfileImage = null,
-    Object? coverImageUrl = freezed,
     Object? positiveReactionsCount = null,
     Object? commentsCount = null,
     Object? publishedAt = null,
     Object? tags = null,
+    Object? coverImageUrl = freezed,
   }) {
     return _then(
       _$ArticleImpl(
@@ -209,10 +209,6 @@ class __$$ArticleImplCopyWithImpl<$Res>
             ? _value.userProfileImage
             : userProfileImage // ignore: cast_nullable_to_non_nullable
                   as String,
-        coverImageUrl: freezed == coverImageUrl
-            ? _value.coverImageUrl
-            : coverImageUrl // ignore: cast_nullable_to_non_nullable
-                  as String?,
         positiveReactionsCount: null == positiveReactionsCount
             ? _value.positiveReactionsCount
             : positiveReactionsCount // ignore: cast_nullable_to_non_nullable
@@ -229,6 +225,10 @@ class __$$ArticleImplCopyWithImpl<$Res>
             ? _value._tags
             : tags // ignore: cast_nullable_to_non_nullable
                   as List<String>,
+        coverImageUrl: freezed == coverImageUrl
+            ? _value.coverImageUrl
+            : coverImageUrl // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
@@ -244,11 +244,11 @@ class _$ArticleImpl implements _Article {
     required this.url,
     required this.username,
     required this.userProfileImage,
-    this.coverImageUrl,
     required this.positiveReactionsCount,
     required this.commentsCount,
     required this.publishedAt,
     required final List<String> tags,
+    this.coverImageUrl,
   }) : _tags = tags;
 
   @override
@@ -264,8 +264,6 @@ class _$ArticleImpl implements _Article {
   @override
   final String userProfileImage;
   @override
-  final String? coverImageUrl;
-  @override
   final int positiveReactionsCount;
   @override
   final int commentsCount;
@@ -280,8 +278,11 @@ class _$ArticleImpl implements _Article {
   }
 
   @override
+  final String? coverImageUrl;
+
+  @override
   String toString() {
-    return 'Article(id: $id, title: $title, description: $description, url: $url, username: $username, userProfileImage: $userProfileImage, coverImageUrl: $coverImageUrl, positiveReactionsCount: $positiveReactionsCount, commentsCount: $commentsCount, publishedAt: $publishedAt, tags: $tags)';
+    return 'Article(id: $id, title: $title, description: $description, url: $url, username: $username, userProfileImage: $userProfileImage, positiveReactionsCount: $positiveReactionsCount, commentsCount: $commentsCount, publishedAt: $publishedAt, tags: $tags, coverImageUrl: $coverImageUrl)';
   }
 
   @override
@@ -298,15 +299,15 @@ class _$ArticleImpl implements _Article {
                 other.username == username) &&
             (identical(other.userProfileImage, userProfileImage) ||
                 other.userProfileImage == userProfileImage) &&
-            (identical(other.coverImageUrl, coverImageUrl) ||
-                other.coverImageUrl == coverImageUrl) &&
             (identical(other.positiveReactionsCount, positiveReactionsCount) ||
                 other.positiveReactionsCount == positiveReactionsCount) &&
             (identical(other.commentsCount, commentsCount) ||
                 other.commentsCount == commentsCount) &&
             (identical(other.publishedAt, publishedAt) ||
                 other.publishedAt == publishedAt) &&
-            const DeepCollectionEquality().equals(other._tags, _tags));
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            (identical(other.coverImageUrl, coverImageUrl) ||
+                other.coverImageUrl == coverImageUrl));
   }
 
   @override
@@ -318,11 +319,11 @@ class _$ArticleImpl implements _Article {
     url,
     username,
     userProfileImage,
-    coverImageUrl,
     positiveReactionsCount,
     commentsCount,
     publishedAt,
     const DeepCollectionEquality().hash(_tags),
+    coverImageUrl,
   );
 
   /// Create a copy of Article
@@ -342,11 +343,11 @@ abstract class _Article implements Article {
     required final String url,
     required final String username,
     required final String userProfileImage,
-    final String? coverImageUrl,
     required final int positiveReactionsCount,
     required final int commentsCount,
     required final DateTime publishedAt,
     required final List<String> tags,
+    final String? coverImageUrl,
   }) = _$ArticleImpl;
 
   @override
@@ -362,8 +363,6 @@ abstract class _Article implements Article {
   @override
   String get userProfileImage;
   @override
-  String? get coverImageUrl;
-  @override
   int get positiveReactionsCount;
   @override
   int get commentsCount;
@@ -371,6 +370,8 @@ abstract class _Article implements Article {
   DateTime get publishedAt;
   @override
   List<String> get tags;
+  @override
+  String? get coverImageUrl;
 
   /// Create a copy of Article
   /// with the given fields replaced by the non-null parameter values.

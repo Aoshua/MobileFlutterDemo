@@ -13,13 +13,13 @@ _$ArticleDtoImpl _$$ArticleDtoImplFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String,
       url: json['url'] as String,
       user: UserDto.fromJson(json['user'] as Map<String, dynamic>),
-      coverImage: json['cover_image'] as String?,
       positiveReactionsCount: (json['positive_reactions_count'] as num).toInt(),
       commentsCount: (json['comments_count'] as num).toInt(),
       publishedAt: DateTime.parse(json['published_at'] as String),
       tagList: (json['tag_list'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+      coverImage: json['cover_image'] as String?,
     );
 
 Map<String, dynamic> _$$ArticleDtoImplToJson(_$ArticleDtoImpl instance) =>
@@ -29,9 +29,9 @@ Map<String, dynamic> _$$ArticleDtoImplToJson(_$ArticleDtoImpl instance) =>
       'description': instance.description,
       'url': instance.url,
       'user': instance.user,
-      'cover_image': instance.coverImage,
       'positive_reactions_count': instance.positiveReactionsCount,
       'comments_count': instance.commentsCount,
       'published_at': instance.publishedAt.toIso8601String(),
       'tag_list': instance.tagList,
+      'cover_image': instance.coverImage,
     };

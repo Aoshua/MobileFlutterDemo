@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'article_dto.dart';
+part of 'article_detail.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,73 +15,64 @@ final _privateConstructorUsedError = UnsupportedError(
   'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
 );
 
-ArticleDto _$ArticleDtoFromJson(Map<String, dynamic> json) {
-  return _ArticleDto.fromJson(json);
-}
-
 /// @nodoc
-mixin _$ArticleDto {
+mixin _$ArticleDetail {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  String get bodyMarkdown => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
-  UserDto get user => throw _privateConstructorUsedError;
-  @JsonKey(name: 'positive_reactions_count')
+  String get username => throw _privateConstructorUsedError;
+  String get userProfileImage => throw _privateConstructorUsedError;
   int get positiveReactionsCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'comments_count')
-  int get commentsCount => throw _privateConstructorUsedError; // json_serializable knows how to parse ISO 8601 date strings to
-  // DateTime automatically.
-  @JsonKey(name: 'published_at')
+  int get commentsCount => throw _privateConstructorUsedError;
+  int get readingTimeMinutes => throw _privateConstructorUsedError;
   DateTime get publishedAt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'tag_list')
-  List<String> get tagList => throw _privateConstructorUsedError;
-  @JsonKey(name: 'cover_image')
-  String? get coverImage => throw _privateConstructorUsedError;
+  List<String> get tags => throw _privateConstructorUsedError;
+  String? get coverImageUrl => throw _privateConstructorUsedError;
 
-  /// Serializes this ArticleDto to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ArticleDto
+  /// Create a copy of ArticleDetail
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ArticleDtoCopyWith<ArticleDto> get copyWith =>
+  $ArticleDetailCopyWith<ArticleDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ArticleDtoCopyWith<$Res> {
-  factory $ArticleDtoCopyWith(
-    ArticleDto value,
-    $Res Function(ArticleDto) then,
-  ) = _$ArticleDtoCopyWithImpl<$Res, ArticleDto>;
+abstract class $ArticleDetailCopyWith<$Res> {
+  factory $ArticleDetailCopyWith(
+    ArticleDetail value,
+    $Res Function(ArticleDetail) then,
+  ) = _$ArticleDetailCopyWithImpl<$Res, ArticleDetail>;
   @useResult
   $Res call({
     int id,
     String title,
     String description,
+    String bodyMarkdown,
     String url,
-    UserDto user,
-    @JsonKey(name: 'positive_reactions_count') int positiveReactionsCount,
-    @JsonKey(name: 'comments_count') int commentsCount,
-    @JsonKey(name: 'published_at') DateTime publishedAt,
-    @JsonKey(name: 'tag_list') List<String> tagList,
-    @JsonKey(name: 'cover_image') String? coverImage,
+    String username,
+    String userProfileImage,
+    int positiveReactionsCount,
+    int commentsCount,
+    int readingTimeMinutes,
+    DateTime publishedAt,
+    List<String> tags,
+    String? coverImageUrl,
   });
-
-  $UserDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$ArticleDtoCopyWithImpl<$Res, $Val extends ArticleDto>
-    implements $ArticleDtoCopyWith<$Res> {
-  _$ArticleDtoCopyWithImpl(this._value, this._then);
+class _$ArticleDetailCopyWithImpl<$Res, $Val extends ArticleDetail>
+    implements $ArticleDetailCopyWith<$Res> {
+  _$ArticleDetailCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ArticleDto
+  /// Create a copy of ArticleDetail
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -89,13 +80,16 @@ class _$ArticleDtoCopyWithImpl<$Res, $Val extends ArticleDto>
     Object? id = null,
     Object? title = null,
     Object? description = null,
+    Object? bodyMarkdown = null,
     Object? url = null,
-    Object? user = null,
+    Object? username = null,
+    Object? userProfileImage = null,
     Object? positiveReactionsCount = null,
     Object? commentsCount = null,
+    Object? readingTimeMinutes = null,
     Object? publishedAt = null,
-    Object? tagList = null,
-    Object? coverImage = freezed,
+    Object? tags = null,
+    Object? coverImageUrl = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -111,14 +105,22 @@ class _$ArticleDtoCopyWithImpl<$Res, $Val extends ArticleDto>
                 ? _value.description
                 : description // ignore: cast_nullable_to_non_nullable
                       as String,
+            bodyMarkdown: null == bodyMarkdown
+                ? _value.bodyMarkdown
+                : bodyMarkdown // ignore: cast_nullable_to_non_nullable
+                      as String,
             url: null == url
                 ? _value.url
                 : url // ignore: cast_nullable_to_non_nullable
                       as String,
-            user: null == user
-                ? _value.user
-                : user // ignore: cast_nullable_to_non_nullable
-                      as UserDto,
+            username: null == username
+                ? _value.username
+                : username // ignore: cast_nullable_to_non_nullable
+                      as String,
+            userProfileImage: null == userProfileImage
+                ? _value.userProfileImage
+                : userProfileImage // ignore: cast_nullable_to_non_nullable
+                      as String,
             positiveReactionsCount: null == positiveReactionsCount
                 ? _value.positiveReactionsCount
                 : positiveReactionsCount // ignore: cast_nullable_to_non_nullable
@@ -127,70 +129,64 @@ class _$ArticleDtoCopyWithImpl<$Res, $Val extends ArticleDto>
                 ? _value.commentsCount
                 : commentsCount // ignore: cast_nullable_to_non_nullable
                       as int,
+            readingTimeMinutes: null == readingTimeMinutes
+                ? _value.readingTimeMinutes
+                : readingTimeMinutes // ignore: cast_nullable_to_non_nullable
+                      as int,
             publishedAt: null == publishedAt
                 ? _value.publishedAt
                 : publishedAt // ignore: cast_nullable_to_non_nullable
                       as DateTime,
-            tagList: null == tagList
-                ? _value.tagList
-                : tagList // ignore: cast_nullable_to_non_nullable
+            tags: null == tags
+                ? _value.tags
+                : tags // ignore: cast_nullable_to_non_nullable
                       as List<String>,
-            coverImage: freezed == coverImage
-                ? _value.coverImage
-                : coverImage // ignore: cast_nullable_to_non_nullable
+            coverImageUrl: freezed == coverImageUrl
+                ? _value.coverImageUrl
+                : coverImageUrl // ignore: cast_nullable_to_non_nullable
                       as String?,
           )
           as $Val,
     );
   }
-
-  /// Create a copy of ArticleDto
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserDtoCopyWith<$Res> get user {
-    return $UserDtoCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$ArticleDtoImplCopyWith<$Res>
-    implements $ArticleDtoCopyWith<$Res> {
-  factory _$$ArticleDtoImplCopyWith(
-    _$ArticleDtoImpl value,
-    $Res Function(_$ArticleDtoImpl) then,
-  ) = __$$ArticleDtoImplCopyWithImpl<$Res>;
+abstract class _$$ArticleDetailImplCopyWith<$Res>
+    implements $ArticleDetailCopyWith<$Res> {
+  factory _$$ArticleDetailImplCopyWith(
+    _$ArticleDetailImpl value,
+    $Res Function(_$ArticleDetailImpl) then,
+  ) = __$$ArticleDetailImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
     int id,
     String title,
     String description,
+    String bodyMarkdown,
     String url,
-    UserDto user,
-    @JsonKey(name: 'positive_reactions_count') int positiveReactionsCount,
-    @JsonKey(name: 'comments_count') int commentsCount,
-    @JsonKey(name: 'published_at') DateTime publishedAt,
-    @JsonKey(name: 'tag_list') List<String> tagList,
-    @JsonKey(name: 'cover_image') String? coverImage,
+    String username,
+    String userProfileImage,
+    int positiveReactionsCount,
+    int commentsCount,
+    int readingTimeMinutes,
+    DateTime publishedAt,
+    List<String> tags,
+    String? coverImageUrl,
   });
-
-  @override
-  $UserDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$ArticleDtoImplCopyWithImpl<$Res>
-    extends _$ArticleDtoCopyWithImpl<$Res, _$ArticleDtoImpl>
-    implements _$$ArticleDtoImplCopyWith<$Res> {
-  __$$ArticleDtoImplCopyWithImpl(
-    _$ArticleDtoImpl _value,
-    $Res Function(_$ArticleDtoImpl) _then,
+class __$$ArticleDetailImplCopyWithImpl<$Res>
+    extends _$ArticleDetailCopyWithImpl<$Res, _$ArticleDetailImpl>
+    implements _$$ArticleDetailImplCopyWith<$Res> {
+  __$$ArticleDetailImplCopyWithImpl(
+    _$ArticleDetailImpl _value,
+    $Res Function(_$ArticleDetailImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of ArticleDto
+  /// Create a copy of ArticleDetail
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -198,16 +194,19 @@ class __$$ArticleDtoImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? description = null,
+    Object? bodyMarkdown = null,
     Object? url = null,
-    Object? user = null,
+    Object? username = null,
+    Object? userProfileImage = null,
     Object? positiveReactionsCount = null,
     Object? commentsCount = null,
+    Object? readingTimeMinutes = null,
     Object? publishedAt = null,
-    Object? tagList = null,
-    Object? coverImage = freezed,
+    Object? tags = null,
+    Object? coverImageUrl = freezed,
   }) {
     return _then(
-      _$ArticleDtoImpl(
+      _$ArticleDetailImpl(
         id: null == id
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
@@ -220,14 +219,22 @@ class __$$ArticleDtoImplCopyWithImpl<$Res>
             ? _value.description
             : description // ignore: cast_nullable_to_non_nullable
                   as String,
+        bodyMarkdown: null == bodyMarkdown
+            ? _value.bodyMarkdown
+            : bodyMarkdown // ignore: cast_nullable_to_non_nullable
+                  as String,
         url: null == url
             ? _value.url
             : url // ignore: cast_nullable_to_non_nullable
                   as String,
-        user: null == user
-            ? _value.user
-            : user // ignore: cast_nullable_to_non_nullable
-                  as UserDto,
+        username: null == username
+            ? _value.username
+            : username // ignore: cast_nullable_to_non_nullable
+                  as String,
+        userProfileImage: null == userProfileImage
+            ? _value.userProfileImage
+            : userProfileImage // ignore: cast_nullable_to_non_nullable
+                  as String,
         positiveReactionsCount: null == positiveReactionsCount
             ? _value.positiveReactionsCount
             : positiveReactionsCount // ignore: cast_nullable_to_non_nullable
@@ -236,17 +243,21 @@ class __$$ArticleDtoImplCopyWithImpl<$Res>
             ? _value.commentsCount
             : commentsCount // ignore: cast_nullable_to_non_nullable
                   as int,
+        readingTimeMinutes: null == readingTimeMinutes
+            ? _value.readingTimeMinutes
+            : readingTimeMinutes // ignore: cast_nullable_to_non_nullable
+                  as int,
         publishedAt: null == publishedAt
             ? _value.publishedAt
             : publishedAt // ignore: cast_nullable_to_non_nullable
                   as DateTime,
-        tagList: null == tagList
-            ? _value._tagList
-            : tagList // ignore: cast_nullable_to_non_nullable
+        tags: null == tags
+            ? _value._tags
+            : tags // ignore: cast_nullable_to_non_nullable
                   as List<String>,
-        coverImage: freezed == coverImage
-            ? _value.coverImage
-            : coverImage // ignore: cast_nullable_to_non_nullable
+        coverImageUrl: freezed == coverImageUrl
+            ? _value.coverImageUrl
+            : coverImageUrl // ignore: cast_nullable_to_non_nullable
                   as String?,
       ),
     );
@@ -254,24 +265,23 @@ class __$$ArticleDtoImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$ArticleDtoImpl implements _ArticleDto {
-  const _$ArticleDtoImpl({
+
+class _$ArticleDetailImpl implements _ArticleDetail {
+  const _$ArticleDetailImpl({
     required this.id,
     required this.title,
     required this.description,
+    required this.bodyMarkdown,
     required this.url,
-    required this.user,
-    @JsonKey(name: 'positive_reactions_count')
+    required this.username,
+    required this.userProfileImage,
     required this.positiveReactionsCount,
-    @JsonKey(name: 'comments_count') required this.commentsCount,
-    @JsonKey(name: 'published_at') required this.publishedAt,
-    @JsonKey(name: 'tag_list') required final List<String> tagList,
-    @JsonKey(name: 'cover_image') this.coverImage,
-  }) : _tagList = tagList;
-
-  factory _$ArticleDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ArticleDtoImplFromJson(json);
+    required this.commentsCount,
+    required this.readingTimeMinutes,
+    required this.publishedAt,
+    required final List<String> tags,
+    this.coverImageUrl,
+  }) : _tags = tags;
 
   @override
   final int id;
@@ -280,107 +290,109 @@ class _$ArticleDtoImpl implements _ArticleDto {
   @override
   final String description;
   @override
+  final String bodyMarkdown;
+  @override
   final String url;
   @override
-  final UserDto user;
+  final String username;
   @override
-  @JsonKey(name: 'positive_reactions_count')
+  final String userProfileImage;
+  @override
   final int positiveReactionsCount;
   @override
-  @JsonKey(name: 'comments_count')
   final int commentsCount;
-  // json_serializable knows how to parse ISO 8601 date strings to
-  // DateTime automatically.
   @override
-  @JsonKey(name: 'published_at')
+  final int readingTimeMinutes;
+  @override
   final DateTime publishedAt;
-  final List<String> _tagList;
+  final List<String> _tags;
   @override
-  @JsonKey(name: 'tag_list')
-  List<String> get tagList {
-    if (_tagList is EqualUnmodifiableListView) return _tagList;
+  List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tagList);
+    return EqualUnmodifiableListView(_tags);
   }
 
   @override
-  @JsonKey(name: 'cover_image')
-  final String? coverImage;
+  final String? coverImageUrl;
 
   @override
   String toString() {
-    return 'ArticleDto(id: $id, title: $title, description: $description, url: $url, user: $user, positiveReactionsCount: $positiveReactionsCount, commentsCount: $commentsCount, publishedAt: $publishedAt, tagList: $tagList, coverImage: $coverImage)';
+    return 'ArticleDetail(id: $id, title: $title, description: $description, bodyMarkdown: $bodyMarkdown, url: $url, username: $username, userProfileImage: $userProfileImage, positiveReactionsCount: $positiveReactionsCount, commentsCount: $commentsCount, readingTimeMinutes: $readingTimeMinutes, publishedAt: $publishedAt, tags: $tags, coverImageUrl: $coverImageUrl)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArticleDtoImpl &&
+            other is _$ArticleDetailImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.bodyMarkdown, bodyMarkdown) ||
+                other.bodyMarkdown == bodyMarkdown) &&
             (identical(other.url, url) || other.url == url) &&
-            (identical(other.user, user) || other.user == user) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.userProfileImage, userProfileImage) ||
+                other.userProfileImage == userProfileImage) &&
             (identical(other.positiveReactionsCount, positiveReactionsCount) ||
                 other.positiveReactionsCount == positiveReactionsCount) &&
             (identical(other.commentsCount, commentsCount) ||
                 other.commentsCount == commentsCount) &&
+            (identical(other.readingTimeMinutes, readingTimeMinutes) ||
+                other.readingTimeMinutes == readingTimeMinutes) &&
             (identical(other.publishedAt, publishedAt) ||
                 other.publishedAt == publishedAt) &&
-            const DeepCollectionEquality().equals(other._tagList, _tagList) &&
-            (identical(other.coverImage, coverImage) ||
-                other.coverImage == coverImage));
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            (identical(other.coverImageUrl, coverImageUrl) ||
+                other.coverImageUrl == coverImageUrl));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
     runtimeType,
     id,
     title,
     description,
+    bodyMarkdown,
     url,
-    user,
+    username,
+    userProfileImage,
     positiveReactionsCount,
     commentsCount,
+    readingTimeMinutes,
     publishedAt,
-    const DeepCollectionEquality().hash(_tagList),
-    coverImage,
+    const DeepCollectionEquality().hash(_tags),
+    coverImageUrl,
   );
 
-  /// Create a copy of ArticleDto
+  /// Create a copy of ArticleDetail
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArticleDtoImplCopyWith<_$ArticleDtoImpl> get copyWith =>
-      __$$ArticleDtoImplCopyWithImpl<_$ArticleDtoImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ArticleDtoImplToJson(this);
-  }
+  _$$ArticleDetailImplCopyWith<_$ArticleDetailImpl> get copyWith =>
+      __$$ArticleDetailImplCopyWithImpl<_$ArticleDetailImpl>(this, _$identity);
 }
 
-abstract class _ArticleDto implements ArticleDto {
-  const factory _ArticleDto({
+abstract class _ArticleDetail implements ArticleDetail {
+  const factory _ArticleDetail({
     required final int id,
     required final String title,
     required final String description,
+    required final String bodyMarkdown,
     required final String url,
-    required final UserDto user,
-    @JsonKey(name: 'positive_reactions_count')
+    required final String username,
+    required final String userProfileImage,
     required final int positiveReactionsCount,
-    @JsonKey(name: 'comments_count') required final int commentsCount,
-    @JsonKey(name: 'published_at') required final DateTime publishedAt,
-    @JsonKey(name: 'tag_list') required final List<String> tagList,
-    @JsonKey(name: 'cover_image') final String? coverImage,
-  }) = _$ArticleDtoImpl;
-
-  factory _ArticleDto.fromJson(Map<String, dynamic> json) =
-      _$ArticleDtoImpl.fromJson;
+    required final int commentsCount,
+    required final int readingTimeMinutes,
+    required final DateTime publishedAt,
+    required final List<String> tags,
+    final String? coverImageUrl,
+  }) = _$ArticleDetailImpl;
 
   @override
   int get id;
@@ -389,30 +401,30 @@ abstract class _ArticleDto implements ArticleDto {
   @override
   String get description;
   @override
+  String get bodyMarkdown;
+  @override
   String get url;
   @override
-  UserDto get user;
+  String get username;
   @override
-  @JsonKey(name: 'positive_reactions_count')
+  String get userProfileImage;
+  @override
   int get positiveReactionsCount;
   @override
-  @JsonKey(name: 'comments_count')
-  int get commentsCount; // json_serializable knows how to parse ISO 8601 date strings to
-  // DateTime automatically.
+  int get commentsCount;
   @override
-  @JsonKey(name: 'published_at')
+  int get readingTimeMinutes;
+  @override
   DateTime get publishedAt;
   @override
-  @JsonKey(name: 'tag_list')
-  List<String> get tagList;
+  List<String> get tags;
   @override
-  @JsonKey(name: 'cover_image')
-  String? get coverImage;
+  String? get coverImageUrl;
 
-  /// Create a copy of ArticleDto
+  /// Create a copy of ArticleDetail
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ArticleDtoImplCopyWith<_$ArticleDtoImpl> get copyWith =>
+  _$$ArticleDetailImplCopyWith<_$ArticleDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
