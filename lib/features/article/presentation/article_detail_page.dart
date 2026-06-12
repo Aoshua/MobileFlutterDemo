@@ -34,6 +34,7 @@ class ArticleDetailPage extends ConsumerWidget {
           ),
         ),
         data: (article) => CustomScrollView(
+          // Slivers solve mixing a collapsing app bar with a scrollable body.
           slivers: [
             SliverAppBar(
               expandedHeight: article.coverImageUrl != null ? 240 : 0,
